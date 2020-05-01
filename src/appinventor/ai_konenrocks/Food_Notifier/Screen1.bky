@@ -1,0 +1,76 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="component_event" id="F1BevjU]J7%y8,-.i^_x" x="-823" y="-379">
+    <mutation component_type="Form" is_generic="false" instance_name="Screen1" event_name="BackPressed"></mutation>
+    <field name="COMPONENT_SELECTOR">Screen1</field>
+    <statement name="DO">
+      <block type="controls_openAnotherScreen" id="/[]pg2Tq9DlaD$gY9xS~">
+        <value name="SCREEN">
+          <block type="text" id="_-TZ(?_)w3SSIF*)Q@pU">
+            <field name="TEXT">Screen2</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+  <block type="component_event" id="/QOMcnlk?XVp2*c,vsKC" x="-820" y="-289">
+    <mutation component_type="Button" is_generic="false" instance_name="Button1" event_name="Click"></mutation>
+    <field name="COMPONENT_SELECTOR">Button1</field>
+    <statement name="DO">
+      <block type="component_method" id="%~ww{_)F9DS2n,ar1Z;3">
+        <mutation component_type="Sharing" method_name="ShareMessage" is_generic="false" instance_name="Sharing1"></mutation>
+        <field name="COMPONENT_SELECTOR">Sharing1</field>
+        <value name="ARG0">
+          <block type="text" id="!GL_#mA?/*19z}gHI(mi">
+            <field name="TEXT">*DOODH KI GAADI AA GAYI HAI*</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+  <block type="component_event" id="+,,QgmBsvyVR7:f)b85`" x="-816" y="-181">
+    <mutation component_type="Button" is_generic="false" instance_name="Button4" event_name="Click"></mutation>
+    <field name="COMPONENT_SELECTOR">Button4</field>
+    <statement name="DO">
+      <block type="component_method" id="NK?EKA.{.zFsuy?xH#Oy">
+        <mutation component_type="Sharing" method_name="ShareMessage" is_generic="false" instance_name="Sharing1"></mutation>
+        <field name="COMPONENT_SELECTOR">Sharing1</field>
+        <value name="ARG0">
+          <block type="text" id="UYcw.N~Db8DPL,[=@M@E">
+            <field name="TEXT">*MOBILE ATM KI GAADI AA GAYI HAI*</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+  <block type="component_event" id="F3)R:`WzD7332!wK,N$3" x="-816" y="-73">
+    <mutation component_type="Button" is_generic="false" instance_name="Button5" event_name="Click"></mutation>
+    <field name="COMPONENT_SELECTOR">Button5</field>
+    <statement name="DO">
+      <block type="component_method" id="|bP/w^3cv?A4?0**w5Q_">
+        <mutation component_type="Sharing" method_name="ShareMessage" is_generic="false" instance_name="Sharing1"></mutation>
+        <field name="COMPONENT_SELECTOR">Sharing1</field>
+        <value name="ARG0">
+          <block type="text" id="N-!3tXN#}FJJJ!Vk=K_w">
+            <field name="TEXT">*RATION  KI GAADI AA GAYI HAI*</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+  <block type="component_event" id="Ty|BhpA@V$}!NaZSPv4#" x="-816" y="30">
+    <mutation component_type="Button" is_generic="false" instance_name="Button2" event_name="Click"></mutation>
+    <field name="COMPONENT_SELECTOR">Button2</field>
+    <statement name="DO">
+      <block type="component_method" id="d]$p{S@Z1s+2|L/Z[wa.">
+        <mutation component_type="Sharing" method_name="ShareMessage" is_generic="false" instance_name="Sharing1"></mutation>
+        <field name="COMPONENT_SELECTOR">Sharing1</field>
+        <value name="ARG0">
+          <block type="text" id="vPJZ|e:!{)7E22@Ie;6D">
+            <field name="TEXT">*MOBILE ATM KI GAADI AA GAYI HAI*</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+  <yacodeblocks ya-version="206" language-version="31"></yacodeblocks>
+</xml>

@@ -1,0 +1,10 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="component_event" id=":;h}DUioxY}Yy+cbzEAd" x="-766" y="-258">
+    <mutation component_type="Form" is_generic="false" instance_name="Screen2" event_name="BackPressed"></mutation>
+    <field name="COMPONENT_SELECTOR">Screen2</field>
+    <statement name="DO">
+      <block type="controls_closeApplication" id="DM(kEvW|D|ni,*d8,8B`"></block>
+    </statement>
+  </block>
+  <yacodeblocks ya-version="206" language-version="31"></yacodeblocks>
+</xml>
