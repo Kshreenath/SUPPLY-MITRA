@@ -1,0 +1,269 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="global_declaration" id="aX,iz4zn?:9.N:8=R~70" x="-599" y="-579">
+    <field name="NAME">BroadcastList</field>
+    <value name="VALUE">
+      <block type="lists_create_with" id="IzHrlb)#Z6ZZL*8eKJld">
+        <mutation items="0"></mutation>
+      </block>
+    </value>
+  </block>
+  <block type="component_event" id="(jXuQ;xq={.ppBNnjA2F" x="-584" y="-550">
+    <mutation component_type="Form" is_generic="false" instance_name="Screen4" event_name="Initialize"></mutation>
+    <field name="COMPONENT_SELECTOR">Screen4</field>
+    <statement name="DO">
+      <block type="lexical_variable_set" id="i@7`8%l1?-qay~$^3)F*">
+        <field name="VAR">global BroadcastList</field>
+        <value name="VALUE">
+          <block type="component_method" id="HMvXm#DdTsf*H,TkaL5N">
+            <mutation component_type="TinyDB" method_name="GetValue" is_generic="false" instance_name="TinyDB1"></mutation>
+            <field name="COMPONENT_SELECTOR">TinyDB1</field>
+            <value name="ARG0">
+              <block type="text" id="HCSIe,+_Fr(bY7s{jmvQ">
+                <field name="TEXT">broadcastList</field>
+              </block>
+            </value>
+            <value name="ARG1">
+              <block type="text" id="==i,EdMM!|Omkk2?[!2|">
+                <field name="TEXT"></field>
+              </block>
+            </value>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+  <block type="component_event" id="Jz6eN$3}3zkd-vn[9+ZV" x="-584" y="-333">
+    <mutation component_type="Button" is_generic="false" instance_name="Button1" event_name="Click"></mutation>
+    <field name="COMPONENT_SELECTOR">Button1</field>
+    <statement name="DO">
+      <block type="controls_forEach" id="[J-~?[dpH[+7G8o`Z7MW">
+        <field name="VAR">item</field>
+        <value name="LIST">
+          <block type="lexical_variable_get" id="/GXl^oQ;f#:rzGhw-p@o">
+            <field name="VAR">global BroadcastList</field>
+          </block>
+        </value>
+        <statement name="DO">
+          <block type="component_set_get" id="anJf$W|=OrSFI*Q76:Qe">
+            <mutation component_type="Texting" set_or_get="set" property_name="PhoneNumber" is_generic="false" instance_name="Texting1"></mutation>
+            <field name="COMPONENT_SELECTOR">Texting1</field>
+            <field name="PROP">PhoneNumber</field>
+            <value name="VALUE">
+              <block type="lexical_variable_get" id="^Hp?dphUMpe/77A6q?[/">
+                <field name="VAR">item</field>
+              </block>
+            </value>
+            <next>
+              <block type="component_set_get" id="XLU:j5.3u!8Z!pdAcn/E">
+                <mutation component_type="Texting" set_or_get="set" property_name="Message" is_generic="false" instance_name="Texting1"></mutation>
+                <field name="COMPONENT_SELECTOR">Texting1</field>
+                <field name="PROP">Message</field>
+                <value name="VALUE">
+                  <block type="text" id="me]qMd2=2s(X3v)ROo;,">
+                    <field name="TEXT">दूध / डेयरी की गाड़ी आ रही है।</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="component_method" id="8{L9fn8pNjE8~Hbh~//6">
+                    <mutation component_type="Texting" method_name="SendMessageDirect" is_generic="false" instance_name="Texting1"></mutation>
+                    <field name="COMPONENT_SELECTOR">Texting1</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+  <block type="component_event" id="rDr$9[wrtORFl`bjN}p_" x="-585" y="-179">
+    <mutation component_type="Button" is_generic="false" instance_name="Button2" event_name="Click"></mutation>
+    <field name="COMPONENT_SELECTOR">Button2</field>
+    <statement name="DO">
+      <block type="controls_forEach" id="X;IOaH;zc{qNvNg$NByW">
+        <field name="VAR">item</field>
+        <value name="LIST">
+          <block type="lexical_variable_get" id="GN2RDl9_QKEB*lVYwA#h">
+            <field name="VAR">global BroadcastList</field>
+          </block>
+        </value>
+        <statement name="DO">
+          <block type="component_set_get" id=")[@(y`M%O*)Zi@,yK{.g">
+            <mutation component_type="Texting" set_or_get="set" property_name="PhoneNumber" is_generic="false" instance_name="Texting1"></mutation>
+            <field name="COMPONENT_SELECTOR">Texting1</field>
+            <field name="PROP">PhoneNumber</field>
+            <value name="VALUE">
+              <block type="lexical_variable_get" id="Ug.0t2Sv/V{P)?j}^0CM">
+                <field name="VAR">item</field>
+              </block>
+            </value>
+            <next>
+              <block type="component_set_get" id="x7hCTWqK:z{Uf{!xW#0%">
+                <mutation component_type="Texting" set_or_get="set" property_name="Message" is_generic="false" instance_name="Texting1"></mutation>
+                <field name="COMPONENT_SELECTOR">Texting1</field>
+                <field name="PROP">Message</field>
+                <value name="VALUE">
+                  <block type="text" id="}.B@-($FhVE3/3Z*}HJ7">
+                    <field name="TEXT">सब्जी की गाड़ी आ रही है।</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="component_method" id="J=/+AemxkY[isrbVP]7?">
+                    <mutation component_type="Texting" method_name="SendMessageDirect" is_generic="false" instance_name="Texting1"></mutation>
+                    <field name="COMPONENT_SELECTOR">Texting1</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+  <block type="component_event" id="zfLC%8I6M~;Mmt$/I}rB" x="-586" y="-27">
+    <mutation component_type="Button" is_generic="false" instance_name="Button3" event_name="Click"></mutation>
+    <field name="COMPONENT_SELECTOR">Button3</field>
+    <statement name="DO">
+      <block type="controls_forEach" id="2|E*1gk-nOy|~}c^(RAX">
+        <field name="VAR">item</field>
+        <value name="LIST">
+          <block type="lexical_variable_get" id="9WVvgn@v}J~?CB8|x;V*">
+            <field name="VAR">global BroadcastList</field>
+          </block>
+        </value>
+        <statement name="DO">
+          <block type="component_set_get" id="2Zs{(Go5zR3IDZ,o8IL`">
+            <mutation component_type="Texting" set_or_get="set" property_name="PhoneNumber" is_generic="false" instance_name="Texting1"></mutation>
+            <field name="COMPONENT_SELECTOR">Texting1</field>
+            <field name="PROP">PhoneNumber</field>
+            <value name="VALUE">
+              <block type="lexical_variable_get" id="$.Gm@1~eQcUQwo=GX/]m">
+                <field name="VAR">item</field>
+              </block>
+            </value>
+            <next>
+              <block type="component_set_get" id="qhS;mJaK5d.ceU~I5Wm%">
+                <mutation component_type="Texting" set_or_get="set" property_name="Message" is_generic="false" instance_name="Texting1"></mutation>
+                <field name="COMPONENT_SELECTOR">Texting1</field>
+                <field name="PROP">Message</field>
+                <value name="VALUE">
+                  <block type="text" id=":YRc9`G#KhQ!vc=j0.3F">
+                    <field name="TEXT">राशन सामग्री की गाड़ी आ रही है।</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="component_method" id="CjbF3E(J+c[!@F/dipP}">
+                    <mutation component_type="Texting" method_name="SendMessageDirect" is_generic="false" instance_name="Texting1"></mutation>
+                    <field name="COMPONENT_SELECTOR">Texting1</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+  <block type="component_event" id="Z,)G^+s.@*7ww}8hiebs" x="-585" y="115">
+    <mutation component_type="Button" is_generic="false" instance_name="Button4" event_name="Click"></mutation>
+    <field name="COMPONENT_SELECTOR">Button4</field>
+    <statement name="DO">
+      <block type="controls_forEach" id="E;=,rY}(a$CWc,R.jlD}">
+        <field name="VAR">item</field>
+        <value name="LIST">
+          <block type="lexical_variable_get" id="iJyhB=ZpiY9yazf(g1~r">
+            <field name="VAR">global BroadcastList</field>
+          </block>
+        </value>
+        <statement name="DO">
+          <block type="component_set_get" id="kSIBUAV2f9l1#4zAvV*_">
+            <mutation component_type="Texting" set_or_get="set" property_name="PhoneNumber" is_generic="false" instance_name="Texting1"></mutation>
+            <field name="COMPONENT_SELECTOR">Texting1</field>
+            <field name="PROP">PhoneNumber</field>
+            <value name="VALUE">
+              <block type="lexical_variable_get" id=":A~E:X)qALgIl3hIYQ4l">
+                <field name="VAR">item</field>
+              </block>
+            </value>
+            <next>
+              <block type="component_set_get" id="rWMFkd1Zf0K~(*Ro.G|O">
+                <mutation component_type="Texting" set_or_get="set" property_name="Message" is_generic="false" instance_name="Texting1"></mutation>
+                <field name="COMPONENT_SELECTOR">Texting1</field>
+                <field name="PROP">Message</field>
+                <value name="VALUE">
+                  <block type="text" id="lb`%xyMv@b=66C/;u`A1">
+                    <field name="TEXT">दवाइयों की गाड़ी आ रही है।</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="component_method" id="BO0(}JHi0cEt$19rj]X5">
+                    <mutation component_type="Texting" method_name="SendMessageDirect" is_generic="false" instance_name="Texting1"></mutation>
+                    <field name="COMPONENT_SELECTOR">Texting1</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+  <block type="component_event" id="jT~0dHk/=C9Z30ul7k``" x="-589" y="258">
+    <mutation component_type="Button" is_generic="false" instance_name="Button5" event_name="Click"></mutation>
+    <field name="COMPONENT_SELECTOR">Button5</field>
+    <statement name="DO">
+      <block type="controls_forEach" id="eFtY4tvCi(GpVp;%s!6v">
+        <field name="VAR">item</field>
+        <value name="LIST">
+          <block type="lexical_variable_get" id="h2}`IHA1)+UN+KL^mr9t">
+            <field name="VAR">global BroadcastList</field>
+          </block>
+        </value>
+        <statement name="DO">
+          <block type="component_set_get" id="E?4Wh[qvT4/u4!AfhP2M">
+            <mutation component_type="Texting" set_or_get="set" property_name="PhoneNumber" is_generic="false" instance_name="Texting1"></mutation>
+            <field name="COMPONENT_SELECTOR">Texting1</field>
+            <field name="PROP">PhoneNumber</field>
+            <value name="VALUE">
+              <block type="lexical_variable_get" id="$y1p0AXJScVD$sTUfV`,">
+                <field name="VAR">item</field>
+              </block>
+            </value>
+            <next>
+              <block type="component_set_get" id="`WB]a+hTm-4=E8P1+^G%">
+                <mutation component_type="Texting" set_or_get="set" property_name="Message" is_generic="false" instance_name="Texting1"></mutation>
+                <field name="COMPONENT_SELECTOR">Texting1</field>
+                <field name="PROP">Message</field>
+                <value name="VALUE">
+                  <block type="text" id="M;HD]NggrGV1SZ7dc@od">
+                    <field name="TEXT">ए०टी०एम (ATM) की गाड़ी आ रही है।</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="component_method" id="7]%/:JTRGK?@uuNjHFbR">
+                    <mutation component_type="Texting" method_name="SendMessageDirect" is_generic="false" instance_name="Texting1"></mutation>
+                    <field name="COMPONENT_SELECTOR">Texting1</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+  <block type="component_event" id="0h2J!/[m2=0`I/G?GwwZ" x="-584" y="403">
+    <mutation component_type="Button" is_generic="false" instance_name="Button6" event_name="Click"></mutation>
+    <field name="COMPONENT_SELECTOR">Button6</field>
+    <statement name="DO">
+      <block type="controls_openAnotherScreen" id="rS#{6w!~=,+)1x:|=4i=">
+        <value name="SCREEN">
+          <block type="text" id=",}T)l!JQYfIwDyP{m[^=">
+            <field name="TEXT">Screen3</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+  <yacodeblocks ya-version="206" language-version="31"></yacodeblocks>
+</xml>

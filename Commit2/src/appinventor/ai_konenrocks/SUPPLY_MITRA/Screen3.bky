@@ -1,0 +1,354 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="component_event" id="GTCf(,Ump,jIV{e`P1%l" x="-764" y="-682">
+    <mutation component_type="Form" is_generic="false" instance_name="Screen3" event_name="BackPressed"></mutation>
+    <field name="COMPONENT_SELECTOR">Screen3</field>
+    <statement name="DO">
+      <block type="controls_openAnotherScreen" id="I{~$5u3[YgBA3(/,IiNy">
+        <value name="SCREEN">
+          <block type="text" id="$48M1y$~_1_{H8?e;D/p">
+            <field name="TEXT">Screen1</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+  <block type="component_event" id="eNY~r(GCRt12SN!Q[UCS" x="-764" y="-611">
+    <mutation component_type="Form" is_generic="false" instance_name="Screen3" event_name="Initialize"></mutation>
+    <field name="COMPONENT_SELECTOR">Screen3</field>
+    <statement name="DO">
+      <block type="lexical_variable_set" id=";zM#N=O2,_fPR]TO+7;r">
+        <field name="VAR">global valueFromDB</field>
+        <value name="VALUE">
+          <block type="component_method" id="4c!-z2Stfu~w%*5?T8Kw">
+            <mutation component_type="TinyDB" method_name="GetValue" is_generic="false" instance_name="TinyDB1"></mutation>
+            <field name="COMPONENT_SELECTOR">TinyDB1</field>
+            <value name="ARG0">
+              <block type="text" id="]Pi7o(xSmjV8A#CO1I;[">
+                <field name="TEXT">broadcastList</field>
+              </block>
+            </value>
+            <value name="ARG1">
+              <block type="text" id="i:a:l~o8Mbp~KymU%4:*">
+                <field name="TEXT"></field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="controls_if" id="5}%h0|CE%]Q6=fa(_sda">
+            <value name="IF0">
+              <block type="lists_is_list" id="u^#}id$DU5z%fc0aI6VH">
+                <value name="ITEM">
+                  <block type="lexical_variable_get" id="fpto!%2M:U(F],Wg=:(x">
+                    <field name="VAR">global valueFromDB</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="lexical_variable_set" id="+M7PMY+Z,#]%b83=5iF{">
+                <field name="VAR">global BroadcastList</field>
+                <value name="VALUE">
+                  <block type="lexical_variable_get" id="^!5p!-|kS4mV8;-XskTQ">
+                    <field name="VAR">global valueFromDB</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="procedures_callnoreturn" id="lSZm!6*xVzN2Oro@7(;a" inline="false">
+                    <mutation name="displayBroadcastList"></mutation>
+                    <field name="PROCNAME">displayBroadcastList</field>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="component_event" id="0w|^?+6%R/xd,,Ds2d*@" x="-768" y="-385">
+    <mutation component_type="Texting" is_generic="false" instance_name="Texting1" event_name="MessageReceived"></mutation>
+    <field name="COMPONENT_SELECTOR">Texting1</field>
+    <statement name="DO">
+      <block type="controls_if" id="v`ctp}_ho}XP=wVBCqHs">
+        <mutation else="1"></mutation>
+        <value name="IF0">
+          <block type="lists_is_in" id="NdFHnRD-PHZeiFX*EL1=">
+            <value name="ITEM">
+              <block type="lexical_variable_get" id="~quB$Kl)*-U{ZLWCBv9g">
+                <mutation>
+                  <eventparam name="number"></eventparam>
+                </mutation>
+                <field name="VAR">number</field>
+              </block>
+            </value>
+            <value name="LIST">
+              <block type="lexical_variable_get" id="#M_?Kw]QY@bYaVXI98;Z">
+                <field name="VAR">global BroadcastList</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="component_set_get" id="M}4X|=$),0ibH8ef;J@,">
+            <mutation component_type="Texting" set_or_get="set" property_name="Message" is_generic="false" instance_name="Texting1"></mutation>
+            <field name="COMPONENT_SELECTOR">Texting1</field>
+            <field name="PROP">Message</field>
+            <value name="VALUE">
+              <block type="lexical_variable_get" id="yjWX^KuLYt@Vh2mQe!mg">
+                <mutation>
+                  <eventparam name="messageText"></eventparam>
+                </mutation>
+                <field name="VAR">messageText</field>
+              </block>
+            </value>
+            <next>
+              <block type="controls_forEach" id="t(=6qABB)CeIAm/YXwar">
+                <field name="VAR">item</field>
+                <value name="LIST">
+                  <block type="lexical_variable_get" id="AY+s]9i=f/v!9bR,(Lqu">
+                    <field name="VAR">global BroadcastList</field>
+                  </block>
+                </value>
+                <statement name="DO">
+                  <block type="component_set_get" id="`I~Pc4%t|E)HWVFJJd%^">
+                    <mutation component_type="Texting" set_or_get="set" property_name="PhoneNumber" is_generic="false" instance_name="Texting1"></mutation>
+                    <field name="COMPONENT_SELECTOR">Texting1</field>
+                    <field name="PROP">PhoneNumber</field>
+                    <value name="VALUE">
+                      <block type="lexical_variable_get" id="%9u#r8fC}lb5Da?+=6X3">
+                        <field name="VAR">item</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="component_method" id="yOhgRrEjp8Xbf%EU|u64">
+                        <mutation component_type="Texting" method_name="SendMessageDirect" is_generic="false" instance_name="Texting1"></mutation>
+                        <field name="COMPONENT_SELECTOR">Texting1</field>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+                <next>
+                  <block type="component_set_get" id="./X?#QD@9.t;sJ8*o{$h">
+                    <mutation component_type="Label" set_or_get="set" property_name="Text" is_generic="false" instance_name="LogLabel"></mutation>
+                    <field name="COMPONENT_SELECTOR">LogLabel</field>
+                    <field name="PROP">Text</field>
+                    <value name="VALUE">
+                      <block type="text_join" id="gtY]3-h6I7~TIGV=+AXz">
+                        <mutation items="4"></mutation>
+                        <value name="ADD0">
+                          <block type="text" id="qcm4Ey%pi=XNRsq_wMfZ">
+                            <field name="TEXT">NOTICE :</field>
+                          </block>
+                        </value>
+                        <value name="ADD1">
+                          <block type="lexical_variable_get" id="#8*|/wS|EqZ0WSA3_!zl">
+                            <mutation>
+                              <eventparam name="number"></eventparam>
+                            </mutation>
+                            <field name="VAR">number</field>
+                          </block>
+                        </value>
+                        <value name="ADD2">
+                          <block type="text" id="@|lLQFG$!/Ck}CdB{HO1">
+                            <field name="TEXT">\n</field>
+                          </block>
+                        </value>
+                        <value name="ADD3">
+                          <block type="component_set_get" id="JwfV0Ew(.ywCXzRXovn(">
+                            <mutation component_type="Label" set_or_get="get" property_name="Text" is_generic="false" instance_name="LogLabel"></mutation>
+                            <field name="COMPONENT_SELECTOR">LogLabel</field>
+                            <field name="PROP">Text</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <statement name="ELSE">
+          <block type="component_set_get" id="]+GB-6E8r/RMxcf@f^9w">
+            <mutation component_type="Texting" set_or_get="set" property_name="PhoneNumber" is_generic="false" instance_name="Texting1"></mutation>
+            <field name="COMPONENT_SELECTOR">Texting1</field>
+            <field name="PROP">PhoneNumber</field>
+            <value name="VALUE">
+              <block type="lexical_variable_get" id="Cz4_r-}HPm?kB?m}A#l_">
+                <mutation>
+                  <eventparam name="number"></eventparam>
+                </mutation>
+                <field name="VAR">number</field>
+              </block>
+            </value>
+            <next>
+              <block type="controls_if" id="x;Oj)*^`AI!1(t;)#MMk">
+                <mutation else="1"></mutation>
+                <value name="IF0">
+                  <block type="math_compare" id="9}}oUcGm?{bi9#Js^18.">
+                    <field name="OP">EQ</field>
+                    <value name="A">
+                      <block type="lexical_variable_get" id="{v$Xu@uEoOV#WgTxW@%N">
+                        <mutation>
+                          <eventparam name="messageText"></eventparam>
+                        </mutation>
+                        <field name="VAR">messageText</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="text" id="vy@Vxh[S)f*43R~8qc0D">
+                        <field name="TEXT">suvidha</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="lists_add_items" id="]L=gyQ:0ZQRvn,=Ji/RK">
+                    <mutation items="1"></mutation>
+                    <value name="LIST">
+                      <block type="lexical_variable_get" id="pEU{_hpJiK!aEd}7OV*1">
+                        <field name="VAR">global BroadcastList</field>
+                      </block>
+                    </value>
+                    <value name="ITEM0">
+                      <block type="lexical_variable_get" id="jB^ClRrx@Sb:0bUG9VGN">
+                        <mutation>
+                          <eventparam name="number"></eventparam>
+                        </mutation>
+                        <field name="VAR">number</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="component_method" id="(C!vRG,E7KKhoT=nB$YV">
+                        <mutation component_type="TinyDB" method_name="StoreValue" is_generic="false" instance_name="TinyDB1"></mutation>
+                        <field name="COMPONENT_SELECTOR">TinyDB1</field>
+                        <value name="ARG0">
+                          <block type="text" id="`Nd,[|VN?sC1XQg|+@.5">
+                            <field name="TEXT">broadcastList</field>
+                          </block>
+                        </value>
+                        <value name="ARG1">
+                          <block type="lexical_variable_get" id=":sp.Wfu(*$]9U*o/_NcN">
+                            <field name="VAR">global BroadcastList</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="procedures_callnoreturn" id="{JSwO_HiL@9rMopyL5g[" inline="false">
+                            <mutation name="displayBroadcastList"></mutation>
+                            <field name="PROCNAME">displayBroadcastList</field>
+                            <next>
+                              <block type="component_set_get" id="ZN?2t3$XjEn+Urovog`~">
+                                <mutation component_type="Texting" set_or_get="set" property_name="Message" is_generic="false" instance_name="Texting1"></mutation>
+                                <field name="COMPONENT_SELECTOR">Texting1</field>
+                                <field name="PROP">Message</field>
+                                <value name="VALUE">
+                                  <block type="text" id="wG35w-d?ynB4XvWNyoH%">
+                                    <field name="TEXT">धन्यवाद। अब आपको महत्वपूर्ण जानकारी मिलती रहेगी।।</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+                <statement name="ELSE">
+                  <block type="component_set_get" id="-prLL2KQ;+2bsIO9Kys%">
+                    <mutation component_type="Texting" set_or_get="set" property_name="Message" is_generic="false" instance_name="Texting1"></mutation>
+                    <field name="COMPONENT_SELECTOR">Texting1</field>
+                    <field name="PROP">Message</field>
+                    <value name="VALUE">
+                      <block type="text" id="S^v06s0|Da5G@~k{n546">
+                        <field name="TEXT"> supply mitra सुविधा में आपका स्वागत है। अन्य जानकारी के लिए suvidha लिखकर संदेश भेजिए</field>
+                      </block>
+                    </value>
+                  </block>
+                </statement>
+                <next>
+                  <block type="component_method" id="HeH#/PP7GrZ}PHT}x)gP">
+                    <mutation component_type="Texting" method_name="SendMessageDirect" is_generic="false" instance_name="Texting1"></mutation>
+                    <field name="COMPONENT_SELECTOR">Texting1</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+  <block type="global_declaration" id="^0cvuX-|.6Gd1H]WK%|x" x="-123" y="-148">
+    <field name="NAME">BroadcastList</field>
+    <value name="VALUE">
+      <block type="lists_create_with" id="soXySFkx},!MSc^rj?.e">
+        <mutation items="0"></mutation>
+      </block>
+    </value>
+  </block>
+  <block type="global_declaration" id="0Z*RL:U:~OriLa@Z)L0n" x="-121" y="-102">
+    <field name="NAME">valueFromDB</field>
+    <value name="VALUE">
+      <block type="text" id="Z=`Q@,V9ZpgQ~$wWsR3c">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+  </block>
+  <block type="procedures_defnoreturn" id="sI]u%mKXypNs?udwKN+j" x="-63" y="-56">
+    <field name="NAME">displayBroadcastList</field>
+    <statement name="STACK">
+      <block type="component_set_get" id="r*RZJf|G+Q.e=fNF^3xx">
+        <mutation component_type="Label" set_or_get="set" property_name="Text" is_generic="false" instance_name="BroadcastListLabel"></mutation>
+        <field name="COMPONENT_SELECTOR">BroadcastListLabel</field>
+        <field name="PROP">Text</field>
+        <value name="VALUE">
+          <block type="text" id="x[BTsdogR7z]Df=+0BQS">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+        <next>
+          <block type="controls_forEach" id="oig0V=LjQ:2|Z|hICn_z">
+            <field name="VAR">item</field>
+            <value name="LIST">
+              <block type="lexical_variable_get" id="LA=Ufcw_9YhzW#i.0A42">
+                <field name="VAR">global BroadcastList</field>
+              </block>
+            </value>
+            <statement name="DO">
+              <block type="component_set_get" id="#|B6voS!P{Xi1(5e+4ad">
+                <mutation component_type="Label" set_or_get="set" property_name="Text" is_generic="false" instance_name="BroadcastListLabel"></mutation>
+                <field name="COMPONENT_SELECTOR">BroadcastListLabel</field>
+                <field name="PROP">Text</field>
+                <value name="VALUE">
+                  <block type="text_join" id="-UW%WI1LAE1#LP[cG~ia">
+                    <mutation items="3"></mutation>
+                    <value name="ADD0">
+                      <block type="component_set_get" id="%{wQqW8.Ao-M?Be_@HL,">
+                        <mutation component_type="Label" set_or_get="get" property_name="Text" is_generic="false" instance_name="BroadcastListLabel"></mutation>
+                        <field name="COMPONENT_SELECTOR">BroadcastListLabel</field>
+                        <field name="PROP">Text</field>
+                      </block>
+                    </value>
+                    <value name="ADD1">
+                      <block type="text" id="|n^_eR)jv2PqL2D*~$uF">
+                        <field name="TEXT">\n</field>
+                      </block>
+                    </value>
+                    <value name="ADD2">
+                      <block type="lexical_variable_get" id="x!`gm3sI=6o,@}{ZXIQi">
+                        <field name="VAR">item</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <yacodeblocks ya-version="206" language-version="31"></yacodeblocks>
+</xml>
